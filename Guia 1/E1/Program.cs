@@ -16,15 +16,21 @@ namespace E1
                 Console.WriteLine("ingrese un numero: ");
                 vector[i] = Int32.Parse(Console.ReadLine());     
                 suma += vector[i];
-                if(vector[i]<menor)
+                if(i==0)
                 {
                     menor = vector[i];
+                }
+                else
+                {
+                    if(menor>vector[i])
+                    {
+                        menor=vector[i];
+                    }
                 }
             }
             Console.WriteLine("la suma es : "+suma);
             prom = suma/10;
             Console.WriteLine("el promedio es : "+prom);
-            Console.WriteLine("el menor es : "+menor);
             for (int i = 0; i < 10; i++)
             {
                for(int j = i+1; j < 10; j++)
@@ -37,9 +43,10 @@ namespace E1
 		        	}
 		        }
             }
+            Console.WriteLine("el menor es "+ menor);         
             for(int i=0; i < 10; i++)
 	        {
-		        Console.WriteLine("mayor a menor"+vector[i]);
+		        Console.WriteLine("mayor a menor: "+vector[i]);
 	        }
         }
     }
