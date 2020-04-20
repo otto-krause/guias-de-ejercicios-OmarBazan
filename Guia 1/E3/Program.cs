@@ -10,13 +10,17 @@ namespace E3
             Console.WriteLine("ingrese un numero");
             num=Int32.Parse(Console.ReadLine());
             Console.WriteLine(par(num));
-            primo(num);
+            Console.WriteLine(primo(num));  
         }
         void par(int num)
         {
             if (num % 2 == 0)
             {
-                Console.WriteLine("el numero es par");
+                Console.WriteLine("El numero es par");
+            }
+            else
+            {
+                Console.WriteLine("El numero no es par");
             }
         }
         void primo(int num)
