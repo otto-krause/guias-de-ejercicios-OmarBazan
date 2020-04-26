@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace E2
 {
@@ -6,7 +7,20 @@ namespace E2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string turno;
+            
+            Console.WriteLine("Para poder consultar un turno ingrese la especialidad:  ");
+            turno=Console.ReadLine();
+
+            Clinica Medicos = new Clinica();
+
+            foreach (string aux in Medicos.ListDr)
+            {
+                if (turno==aux.Especialidad)
+                {
+                    Console.WriteLine(Medicos.EstaDisponible());
+                }
+            }
         }
     }
 }
