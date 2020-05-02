@@ -18,17 +18,21 @@ namespace E2
             this.CantidadTurnos=CantidadTurnos;
         }
 
-        public string EstaDisponible() //esta disponible o no
+        public string Nombre1 { get => Nombre; set => Nombre = value; }
+
+        public bool libre()
         {
-            
-            if (CantidadTurnos<50)
-            {
-                Console.WriteLine("El doctor "+Nombre + Apellido +"esta disponible"); 
-            }
-            else
-            {
-                Console.WriteLine("No esta disponible");
-            }
-        } 
+            return CantidadTurnos < 50;
+        }
+
+        public bool turno(string espec)
+        {
+            return this.Especialidad==espec && libre();
+        }
+
+        public void ocupado()
+        {
+            CantidadTurnos++;
+        }
     }
 }

@@ -7,19 +7,23 @@ namespace E2
     {
         static void Main(string[] args)
         {
-            string turno;
-            
-            Console.WriteLine("Para poder consultar un turno ingrese la especialidad:  ");
-            turno=Console.ReadLine();
-
+            string espec;
+            int op=1;
             Clinica Medicos = new Clinica();
-
-            foreach (string aux in Medicos.ListDr)
+            
+            while (op!=0)
             {
-                if (turno==aux.Especialidad)
+                Console.WriteLine("Ingrese la especialidad:  ");
+                espec=Console.ReadLine();
+                Medico medico=Medicos.estaDisponible(espec);
+                if (medico!=null)
                 {
-                    Console.WriteLine(Medicos.EstaDisponible());
+                    Console.WriteLine("El medico "+medico.Nombre1+" esta disponible");
                 }
+                else
+                {
+                    Console.WriteLine("No hay medico disponible");
+                }   
             }
         }
     }
