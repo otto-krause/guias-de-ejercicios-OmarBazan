@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace E2
 {
@@ -6,7 +7,16 @@ namespace E2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int presupuesto=1,horas=0;
+
+            while (presupuesto!=0)
+            {
+                Console.WriteLine("Ingrese un presupuesto y horas de trabajo para la construccion");
+                presupuesto=Int32.Parse(Console.ReadLine());
+                horas=Int32.Parse(Console.ReadLine());
+                Construccion construccion = new Construccion(presupuesto,horas);
+                Console.WriteLine("Es posible la construccion? "+construccion.permiso(presupuesto));
+            }
         }
     }
 }
